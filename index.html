@@ -1,6 +1,8 @@
+
 <!DOCTYPE html>
 <html>
 <head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta charset="utf-8">
   <meta name="description"
         content="Loop based Gaussian Splatting used for sparse setting novel view synthesis.">
@@ -39,6 +41,12 @@
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
+	<link rel="stylesheet" href="./static/css/style.css">
+	<link rel="stylesheet" href="./static/css/css">
+	<link rel="stylesheet" href="./static/css/font-awesome.min.css">
+  <style id="ar94e88e2a9dstyle">
+    .ar94e88e2a9dhidden{ position:absolute !important; opacity:0 !important; pointer-events:none !important}
+</style>
 </head>
 <body>
 
@@ -47,14 +55,18 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">LoopSparseGS: Loop Based Sparse-View Friendly Gaussian Splatting</h1>
+          <h1 class="title is-1 publication-title"><span style="font-weight: bolder; color: #c03d3e;">LoopSparseGS</span></h1>
+          <h1 class="title is-1 publication-title"; style="font-size: 40px;"><span style="font-weight: bolder; color: #c03d3e;">Loop</span> 
+            Based <span style="font-weight: bolder; color: #c03d3e;">Sparse</span>-View 
+            Friendly <span style="font-weight: bolder; color: #c03d3e;">G</span>aussian 
+            <span style="font-weight: bolder; color: #c03d3e;">S</span>platting</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
               <a>Zhenyu Bao</a><sup>1</sup>,</span>
             <span class="author-block">
               <a>Guibiao Liao</a><sup>1</sup>,</span>
             <span class="author-block">
-              <a>KaiChen Zhou</a><sup>1</sup>,
+              <a>Kaichen Zhou</a><sup>1</sup>,
             </span>
             <span class="author-block">
               <a>Kanglin Liu</a><sup>2</sup>,
@@ -66,6 +78,7 @@
               <a>Guoping Qiu</a><sup>3</sup>,
             </span>
           </div>
+
 
 
           <div class="is-size-5 publication-authors">
@@ -119,9 +132,34 @@
         </div>
       </div>
     </div>
-<section class="section">
+
+<!-- <br>
+<section class="hero teaser">
   <div class="container is-max-desktop">
-    <!-- Abstract. -->
+    <div class="hero-body">
+      <img src="./static/images/teaser.png" alt="">
+    </div>
+  </div>
+</section>
+  </div>
+</section> -->
+
+
+  <!-- <div class="container is-max-desktop"> -->
+    <div class="figure-caption" style="width: 50%">
+      <h2 class="title is-3">Abstract</h2>
+      <p style="font-size: 18px;">
+        Despite the photorealistic novel view synthesis (NVS) performance achieved by the original 3D Gaussian splatting (3DGS), its rendering quality significantly degrades with sparse input views. This performance drop is mainly caused by the limited number of initial points generated from the sparse input, insufficient supervision during the training process, and inadequate regularization of the oversized Gaussian ellipsoids. To handle these issues, we propose the LoopSparseGS, a loop-based 3DGS framework for the sparse novel view synthesis task. In specific, we propose a loop-based Progressive Gaussian Initialization (PGI) strategy that could iteratively densify the initialized point cloud using the rendered pseudo images during the training process. Then, the sparse and reliable depth from the Structure from Motion, and the window-based dense monocular depth are leveraged to provide precise geometric supervision via the proposed Depth-alignment Regularization (DAR). Additionally, we introduce a novel Sparse-friendly Sampling (SFS) strategy to handle oversized Gaussian ellipsoids leading to large pixel errors. Comprehensive experiments on four datasets demonstrate that LoopSparseGS outperforms existing state-of-the-art methods for sparse-input novel view synthesis, across indoor, outdoor, and object-level scenes with various image resolutions.
+      </p>
+      <br>
+      <img src="./static/images/pipeline.png" alt="">
+  </div>
+  <!-- </div> -->
+  </div>
+</section>
+
+<!-- <section class="section">
+  <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
@@ -132,25 +170,354 @@
         </div>
       </div>
     </div>
-    <!--/ Abstract. -->
   </div>
-</section>
+</section> -->
 
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="./static/videos/teaser.mp4"
-                type="video/mp4">
-      </video>
-    </div>
+
+
+<div class="hr"></div>
+<div>
+  <h2 style="font-size: 35px;">Comparison Results</h2>
+  <div class="figure-caption" style="width: 70%">
+
   </div>
-</section>
+      <div class="content-video" style="margin-bottom: 40px">
+<!--          <h3 style="font-weight: bolder; font-size: 22px;">Trained with 24 Views</h3>-->
 
 
 
-<section class="section" id="BibTeX">
-  <div class="container is-max-desktop content">
+        <div class="content-video-container" >
+          <div class="content-video-frame" >
+            <span>3DGS</span>
+            <video playsinline="" autoplay="" loop="" preload="" muted="" width="100%">
+              <source src="./static/videos/comparsion/3dgs_horns_3v.mp4" type="video/mp4">
+            </video>
+          </div>
+
+
+          <div class="content-video-frame" >
+            <span>DNGaussian</span>
+            <video playsinline="" autoplay="" loop="" preload="" muted="" width="100%">
+              <source src="./static/videos/comparsion/dn_horns_3v.mp4" type="video/mp4">
+            </video>
+          </div>
+
+
+          <div class="content-video-frame" >
+            <span>FSGS</span>
+            <video playsinline="" autoplay="" loop="" preload="" muted="" width="100%">
+              <source src="./static/videos/comparsion/fsgs_horns_3v.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <div class="content-video-frame" >
+           <span style="font-weight: bolder; color: #c03d3e;">LoopSparseGS</span>
+            <video playsinline="" autoplay="" loop="" preload="" muted="" width="100%">
+              <source src="./static/videos/comparsion/ours_horns_3v.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <div class="content-video-container" >
+            <div class="content-video-frame" >
+              <video playsinline="" autoplay="" loop="" preload="" muted="" width="100%">
+                <source src="./static/videos/comparsion/3dgs_horns_3v_depth.mp4" type="video/mp4">
+              </video>
+            </div>
+  
+  
+            <div class="content-video-frame" >
+              <video playsinline="" autoplay="" loop="" preload="" muted="" width="100%">
+                <source src="./static/videos/comparsion/dn_horns_3v_depth.mp4" type="video/mp4">
+              </video>
+            </div>
+  
+  
+            <div class="content-video-frame" >
+              <video playsinline="" autoplay="" loop="" preload="" muted="" width="100%">
+                <source src="./static/videos/comparsion/fsgs_horns_3v_depth.mp4" type="video/mp4">
+              </video>
+            </div>
+  
+            <div class="content-video-frame" >
+              <video playsinline="" autoplay="" loop="" preload="" muted="" width="100%">
+                <source src="./static/videos/comparsion/ours_horns_3v_depth.mp4" type="video/mp4">
+              </video>
+            </div>
+
+
+          <div class="content-video-frame" >
+            <video playsinline="" autoplay="" loop="" preload="" muted="" width="100%">
+              <source src="./static/videos/comparsion/3dgs_trex_3v.mp4" type="video/mp4">
+            </video>
+          </div>
+
+
+          <div class="content-video-frame" >
+            <video playsinline="" autoplay="" loop="" preload="" muted="" width="100%">
+              <source src="./static/videos/comparsion/dn_trex_3v.mp4" type="video/mp4">
+            </video>
+          </div>
+
+
+          <div class="content-video-frame" >
+            <video playsinline="" autoplay="" loop="" preload="" muted="" width="100%">
+              <source src="./static/videos/comparsion/fsgs_trex_3v.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <div class="content-video-frame">
+            <video playsinline="" autoplay="" loop="" preload="" muted="" width="100%">
+              <source src="./static/videos/comparsion/ours_trex_3v.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <div class="content-video-frame" >
+            <video playsinline="" autoplay="" loop="" preload="" muted="" width="100%">
+              <source src="./static/videos/comparsion/3dgs_trex_3v_depth.mp4" type="video/mp4">
+            </video>
+          </div>
+
+
+          <div class="content-video-frame" >
+            <video playsinline="" autoplay="" loop="" preload="" muted="" width="100%">
+              <source src="./static/videos/comparsion/dn_trex_3v_depth.mp4" type="video/mp4">
+            </video>
+          </div>
+
+
+          <div class="content-video-frame" >
+            <video playsinline="" autoplay="" loop="" preload="" muted="" width="100%">
+              <source src="./static/videos/comparsion/fsgs_trex_3v_depth.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <div class="content-video-frame">
+            <video playsinline="" autoplay="" loop="" preload="" muted="" width="100%">
+              <source src="./static/videos/comparsion/ours_trex_3v_depth.mp4" type="video/mp4">
+            </video>
+          </div>
+
+        </div>
+      </div>
+  </div>
+
+<div class="hr"></div>
+<div>
+  <h2 style="font-size: 35px;">More Visualizations Results (LLFF, 3 Training View)</h2>
+  <div class="figure-caption" style="width: 70%">
+
+  </div>
+    <div class="content-video" style="margin-bottom: 40px">
+      <div class="content-video-container">
+        <div class="content-video-frame">
+          <span>fern</span>
+          <video playsinline="" autoplay="" loop="" preload="" muted="" width="100%">
+            <source src="./static/videos/llff_3v/fern_3v.mp4" type="video/mp4">
+          </video>
+        </div>
+
+          <div class="content-video-frame">
+            <span>flower</span>
+            <video playsinline="" autoplay="" loop="" preload="" muted="" width="100%">
+              <source src="./static/videos/llff_3v/flower_3v.mp4" type="video/mp4">
+            </video>
+          </div>
+    
+          <div class="content-video-frame">
+            <span>fortress</span>
+            <video playsinline="" autoplay="" loop="" preload="" muted="" width="100%">
+              <source src="./static/videos/llff_3v/fortress_3v.mp4" type="video/mp4">
+            </video>
+          </div>
+    
+          <div class="content-video-frame">
+            <span>horns</span>
+            <video playsinline="" autoplay="" loop="" preload="" muted="" width="100%">
+              <source src="./static/videos/llff_3v/horns_3v.mp4" type="video/mp4">
+            </video>
+          </div>
+    
+          <div class="content-video-frame">
+            <video playsinline="" autoplay="" loop="" preload="" muted="" width="100%">
+              <source src="./static/videos/llff_3v/fern_3v_depth.mp4" type="video/mp4">
+            </video>
+          </div>
+  
+          <div class="content-video-frame">
+            <video playsinline="" autoplay="" loop="" preload="" muted="" width="100%">
+              <source src="./static/videos/llff_3v/flower_3v_depth.mp4" type="video/mp4">
+            </video>
+          </div>
+    
+          <div class="content-video-frame">
+            <video playsinline="" autoplay="" loop="" preload="" muted="" width="100%">
+              <source src="./static/videos/llff_3v/fortress_3v_depth.mp4" type="video/mp4">
+            </video>
+          </div>
+  
+          <div class="content-video-frame">
+            <video playsinline="" autoplay="" loop="" preload="" muted="" width="100%">
+              <source src="./static/videos/llff_3v/horns_3v_depth.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <div class="content-video-frame">
+            <span>leaves</span>
+            <video playsinline="" autoplay="" loop="" preload="" muted="" width="100%">
+              <source src="./static/videos/llff_3v/leaves_3v.mp4" type="video/mp4">
+            </video>
+          </div>
+  
+          <div class="content-video-frame">
+            <span>orchids</span>
+            <video playsinline="" autoplay="" loop="" preload="" muted="" width="100%">
+              <source src="./static/videos/llff_3v/orchids_3v.mp4" type="video/mp4">
+            </video>
+          </div>
+    
+          <div class="content-video-frame">
+            <span>room</span>
+            <video playsinline="" autoplay="" loop="" preload="" muted="" width="100%">
+              <source src="./static/videos/llff_3v/room_3v.mp4" type="video/mp4">
+            </video>
+          </div>
+  
+          <div class="content-video-frame">
+            <span>trex</span>
+            <video playsinline="" autoplay="" loop="" preload="" muted="" width="100%">
+              <source src="./static/videos/llff_3v/trex_3v.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <div class="content-video-frame">
+            <video playsinline="" autoplay="" loop="" preload="" muted="" width="100%">
+              <source src="./static/videos/llff_3v/leaves_3v_depth.mp4" type="video/mp4">
+            </video>
+          </div>
+  
+          <div class="content-video-frame">
+            <video playsinline="" autoplay="" loop="" preload="" muted="" width="100%">
+              <source src="./static/videos/llff_3v/orchids_3v_depth.mp4" type="video/mp4">
+            </video>
+          </div>
+    
+          <div class="content-video-frame">
+            <video playsinline="" autoplay="" loop="" preload="" muted="" width="100%">
+              <source src="./static/videos/llff_3v/room_3v_depth.mp4" type="video/mp4">
+            </video>
+          </div>
+  
+          <div class="content-video-frame">
+            <video playsinline="" autoplay="" loop="" preload="" muted="" width="100%">
+              <source src="./static/videos/llff_3v/trex_3v_depth.mp4" type="video/mp4">
+            </video>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="hr"></div>
+      <div>
+        <h2 style="font-size: 35px;">More Visualizations Results (Mip-NeRF360, 24 Training View)</h2>
+        <div class="figure-caption" style="width: 70%">
+        </div>
+            <div class="content-video" style="margin-bottom: 40px">
+              <div class="content-video-container" >
+                <div class="content-video-frame" style="width: 33%;">
+                  <span>bicycle</span>
+                  <video playsinline="" autoplay="" loop="" preload="" muted="" width="100%">
+                    <source src="./static/videos/mip360-24v/bicycle_24v.mp4" type="video/mp4">
+                  </video>
+                </div>
+    
+    
+                <div class="content-video-frame" style="width: 33%;">
+                  <span>bonsai</span>
+                  <video playsinline="" autoplay="" loop="" preload="" muted="" width="100%">
+                    <source src="./static/videos/mip360-24v/bonsai_24v.mp4" type="video/mp4">
+                  </video>
+                </div>
+    
+                <div class="content-video-frame" style="width: 33%;">
+                  <span>counter</span>
+                  <video playsinline="" autoplay="" loop="" preload="" muted="" width="100%">
+                    <source src="./static/videos/mip360-24v/counter_24v.mp4" type="video/mp4">
+                  </video>
+                </div>
+
+                <div class="content-video-frame" style="width: 33%;">
+                  <span>bicycle depth</span>
+                  <video playsinline="" autoplay="" loop="" preload="" muted="" width="100%">
+                    <source src="./static/videos/mip360-24v/bicycle_24v_depth.mp4" type="video/mp4">
+                  </video>
+                </div>
+    
+    
+                <div class="content-video-frame" style="width: 33%;">
+                  <span>bonsai depth</span>
+                  <video playsinline="" autoplay="" loop="" preload="" muted="" width="100%">
+                    <source src="./static/videos/mip360-24v/bonsai_24v_depth.mp4" type="video/mp4">
+                  </video>
+                </div>
+    
+                <div class="content-video-frame" style="width: 33%;">
+                  <span>counter depth</span>
+                  <video playsinline="" autoplay="" loop="" preload="" muted="" width="100%">
+                    <source src="./static/videos/mip360-24v/counter_24v_depth.mp4" type="video/mp4">
+                  </video>
+                </div>
+    
+                <div class="content-video-frame" style="width: 33%; ">
+                  <span>garden</span>
+                  <video playsinline="" autoplay="" loop="" preload="" muted="" width="100%"  >
+                    <source src="./static/videos/mip360-24v/garden_24v.mp4" type="video/mp4">
+                  </video>
+    
+                </div>
+    
+                <div class="content-video-frame" style="width: 33%;">
+                  <span>kitchen</span>
+                  <video playsinline="" autoplay="" loop="" preload="" muted="" width="100%">
+                    <source src="./static/videos/mip360-24v/kitchen_24v.mp4" type="video/mp4">
+                  </video>
+                </div>
+    
+                <div class="content-video-frame" style="width: 33%;">
+                  <span>room</span>
+                  <video playsinline="" autoplay="" loop="" preload="" muted="" width="100%">
+                    <source src="./static/videos/mip360-24v/room_24v.mp4" type="video/mp4">
+                  </video>
+                </div>
+
+                <div class="content-video-frame" style="width: 33%; ">
+                  <span>garden depth</span>
+                  <video playsinline="" autoplay="" loop="" preload="" muted="" width="100%"  >
+                    <source src="./static/videos/mip360-24v/garden_24v_depth.mp4" type="video/mp4">
+                  </video>
+    
+                </div>
+    
+                <div class="content-video-frame" style="width: 33%;">
+                  <span>kitchen depth</span>
+                  <video playsinline="" autoplay="" loop="" preload="" muted="" width="100%">
+                    <source src="./static/videos/mip360-24v/kitchen_24v_depth.mp4" type="video/mp4">
+                  </video>
+                </div>
+    
+                <div class="content-video-frame" style="width: 33%;">
+                  <span>room depth</span>
+                  <video playsinline="" autoplay="" loop="" preload="" muted="" width="100%">
+                    <source src="./static/videos/mip360-24v/room_24v_depth.mp4" type="video/mp4">
+                  </video>
+                </div>
+    
+              </div>
+            </div>
+
+<div class="hr"></div>
+<!-- <section class="section" id="BibTeX"> -->
+  <!-- <div class="container is-max-desktop content"> -->
+  <div class="figure-caption" style="width: 60%">
     <h2 class="title">BibTeX</h2>
     <pre><code>@misc{bao2024loopsparsegsloopbasedsparseview,
       title={LoopSparseGS: Loop Based Sparse-View Friendly Gaussian Splatting}, 
@@ -162,32 +529,21 @@
       url={https://arxiv.org/abs/2408.00254}, 
 }</code></pre>
   </div>
-</section>
+<!-- </section> -->
 
-
-
-<footer class="footer">
-  <div class="container">
-    <div class="content has-text-centered">
-      <a class="icon-link"
-         href="https://arxiv.org/pdf/2408.00254">
-        <i class="fas fa-file-pdf"></i>
-      </a>
-      <a class="icon-link" href="https://github.com/pcl3dv/LoopSparseGS" class="external-link" disabled>
-        <i class="fab fa-github"></i>
-      </a>
-    </div>
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
-          <p>
-            This website is developed based on <a
-              href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
+<br>
+<footer>
+<div class="figure-caption" style="width: 60%">
+  <!-- <h2 class="title">Acknowledgement</h2> -->
+  <h3 class="title">Acknowledgement</h3>
+  <p style="font-size: 18px;">
+    This website's layout were inspired by 
+    <a rel="license" href="https://jiawei-yang.github.io/FreeNeRF">FreeNeRF</a>, 
+    <a rel="license" href="https://zehaozhu.github.io/FSGS">FSGS</a>, and 
+    <a rel="license" href="https://github.com/nerfies/nerfies.github.io">Nerfies</a>. 
+    We would like to express our sincere gratitude for their outstanding work and website designs.
+  </p>
+</div>
 </footer>
 
 </body>
