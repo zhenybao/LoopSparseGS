@@ -123,7 +123,7 @@
 
           <div class="is-size-5 publication-authors">
             <span class="author-block"><sup>1</sup>Peking University,</span>
-            <span class="author-block"><sup>2</sup>Pengcheng Laboratory</span>
+            <span class="author-block"><sup>2</sup>Pengcheng Laboratory,</span>
             <span class="author-block"><sup>3</sup>University of Nottingham</span>
           </div>
     
@@ -189,7 +189,23 @@
     <div class="figure-caption" style="width: 50%">
       <h2 class="title is-3">Abstract</h2>
       <p style="font-size: 18px;">
-        Despite the photorealistic novel view synthesis (NVS) performance achieved by the original 3D Gaussian splatting (3DGS), its rendering quality significantly degrades with sparse input views. This performance drop is mainly caused by the limited number of initial points generated from the sparse input, insufficient supervision during the training process, and inadequate regularization of the oversized Gaussian ellipsoids. To handle these issues, we propose the LoopSparseGS, a loop-based 3DGS framework for the sparse novel view synthesis task. In specific, we propose a loop-based Progressive Gaussian Initialization (PGI) strategy that could iteratively densify the initialized point cloud using the rendered pseudo images during the training process. Then, the sparse and reliable depth from the Structure from Motion, and the window-based dense monocular depth are leveraged to provide precise geometric supervision via the proposed Depth-alignment Regularization (DAR). Additionally, we introduce a novel Sparse-friendly Sampling (SFS) strategy to handle oversized Gaussian ellipsoids leading to large pixel errors. Comprehensive experiments on four datasets demonstrate that LoopSparseGS outperforms existing state-of-the-art methods for sparse-input novel view synthesis, across indoor, outdoor, and object-level scenes with various image resolutions.
+        Despite the photorealistic novel view synthesis (NVS) performance achieved by the original 3D Gaussian splatting (3DGS), 
+        its rendering quality significantly degrades with sparse input views. This performance drop is mainly caused by the 
+        limited number of initial points generated from the sparse input, insufficient supervision during the training process, 
+        and inadequate regularization of the oversized Gaussian ellipsoids. 
+        To handle these issues, we propose the <span style="font-weight: bolder; color: #c03d3e;">LoopSparseGS</span>, 
+        a loop-based 3DGS framework for the sparse novel view synthesis task. 
+        In specific, we propose a loop-based 
+        Progressive Gaussian Initialization (<span style="font-weight: bolder; color: #7e44a9;">PGI</span>) 
+        strategy that could iteratively 
+        densify the initialized point cloud using the rendered pseudo images during the training process. 
+        Then, the sparse and reliable depth from the Structure from Motion, 
+        and the window-based dense monocular depth are leveraged to provide precise geometric supervision via 
+        the proposed Depth-alignment Regularization (<span style="font-weight: bolder; color: #19b861;">DAR</span>). 
+        Additionally, we introduce a novel Sparse-friendly Sampling (<span style="font-weight: bolder; color: #9a0001;">SFS</span>) strategy to 
+        handle oversized Gaussian ellipsoids leading to large pixel errors. 
+        Comprehensive experiments on four datasets demonstrate that LoopSparseGS outperforms existing state-of-the-art methods 
+        for sparse-input novel view synthesis, across indoor, outdoor, and object-level scenes with various image resolutions.
       </p>
       <br>
       <img src="./static/images/pipeline.png" alt="">
@@ -340,6 +356,134 @@
         </div>
       </div>
   </div>
+
+  <div class="hr"></div>
+  <div>
+    <h2 style="font-size: 35px;">Ablation Results</h2>
+    <div class="figure-caption" style="width: 70%">
+  
+    </div>
+        <div class="content-video" style="margin-bottom: 40px">
+  <!--          <h3 style="font-weight: bolder; font-size: 22px;">Trained with 24 Views</h3>-->
+  
+          <div class="content-video-container" >
+            <div class="content-video-frame" >
+              <span>3DGS</span>
+              <video playsinline="" autoplay="" loop="" preload="" muted="" width="100%">
+                <source src="./static/videos/ablation/3dgs_horns_3v.mp4" type="video/mp4">
+              </video>
+            </div>
+  
+  
+            <div class="content-video-frame" >
+              <span style="font-weight: bolder; color: #7e44a9;">+ PGI</span>
+              <video playsinline="" autoplay="" loop="" preload="" muted="" width="100%">
+                <source src="./static/videos/ablation/PGI_horns_3v.mp4" type="video/mp4">
+              </video>
+            </div>
+  
+  
+            <div class="content-video-frame" >
+              <span>+ PGI </span>
+              <span style="font-weight: bolder; color: #19b861;">+ DAR</span>
+              <video playsinline="" autoplay="" loop="" preload="" muted="" width="100%">
+                <source src="./static/videos/ablation/DAR_horns_3v.mp4" type="video/mp4">
+              </video>
+            </div>
+  
+            <div class="content-video-frame" >
+             <!-- <span style="font-weight: bolder; color: #c03d3e;">LoopSparseGS</span> -->
+             <span>+ PGI + DAR </span>
+             <span style="font-weight: bolder; color: #9a0001;">+ SFS</span>
+              <video playsinline="" autoplay="" loop="" preload="" muted="" width="100%">
+                <source src="./static/videos/ablation/ours_horns_3v.mp4" type="video/mp4">
+              </video>
+            </div>
+  
+            <div class="content-video-container" >
+              <div class="content-video-frame" >
+                <video playsinline="" autoplay="" loop="" preload="" muted="" width="100%">
+                  <source src="./static/videos/ablation/3dgs_horns_3v_depth.mp4" type="video/mp4">
+                </video>
+              </div>
+    
+    
+              <div class="content-video-frame" >
+                <video playsinline="" autoplay="" loop="" preload="" muted="" width="100%">
+                  <source src="./static/videos/ablation/PGI_horns_3v_depth.mp4" type="video/mp4">
+                </video>
+              </div>
+    
+    
+              <div class="content-video-frame" >
+                <video playsinline="" autoplay="" loop="" preload="" muted="" width="100%">
+                  <source src="./static/videos/ablation/DAR_horns_3v_depth.mp4" type="video/mp4">
+                </video>
+              </div>
+    
+              <div class="content-video-frame" >
+                <video playsinline="" autoplay="" loop="" preload="" muted="" width="100%">
+                  <source src="./static/videos/ablation/ours_horns_3v_depth.mp4" type="video/mp4">
+                </video>
+              </div>
+  
+  
+            <div class="content-video-frame" >
+              <video playsinline="" autoplay="" loop="" preload="" muted="" width="100%">
+                <source src="./static/videos/ablation/3dgs_trex_3v.mp4" type="video/mp4">
+              </video>
+            </div>
+  
+  
+            <div class="content-video-frame" >
+              <video playsinline="" autoplay="" loop="" preload="" muted="" width="100%">
+                <source src="./static/videos/ablation/PGI_trex_3v.mp4" type="video/mp4">
+              </video>
+            </div>
+  
+  
+            <div class="content-video-frame" >
+              <video playsinline="" autoplay="" loop="" preload="" muted="" width="100%">
+                <source src="./static/videos/ablation/DAR_trex_3v.mp4" type="video/mp4">
+              </video>
+            </div>
+  
+            <div class="content-video-frame">
+              <video playsinline="" autoplay="" loop="" preload="" muted="" width="100%">
+                <source src="./static/videos/ablation/ours_trex_3v.mp4" type="video/mp4">
+              </video>
+            </div>
+  
+            <div class="content-video-frame" >
+              <video playsinline="" autoplay="" loop="" preload="" muted="" width="100%">
+                <source src="./static/videos/ablation/3dgs_trex_3v_depth.mp4" type="video/mp4">
+              </video>
+            </div>
+  
+  
+            <div class="content-video-frame" >
+              <video playsinline="" autoplay="" loop="" preload="" muted="" width="100%">
+                <source src="./static/videos/ablation/PGI_trex_3v_depth.mp4" type="video/mp4">
+              </video>
+            </div>
+  
+  
+            <div class="content-video-frame" >
+              <video playsinline="" autoplay="" loop="" preload="" muted="" width="100%">
+                <source src="./static/videos/ablation/DAR_trex_3v_depth.mp4" type="video/mp4">
+              </video>
+            </div>
+  
+            <div class="content-video-frame">
+              <video playsinline="" autoplay="" loop="" preload="" muted="" width="100%">
+                <source src="./static/videos/ablation/ours_trex_3v_depth.mp4" type="video/mp4">
+              </video>
+            </div>
+  
+          </div>
+        </div>
+    </div>
+
 
 <div class="hr"></div>
 <div>
